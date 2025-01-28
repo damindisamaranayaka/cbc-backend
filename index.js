@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import Student from "./models/student.js";    //ctrl+space mgin gnn puluwn  // student.js eke default export krpu nisa thmy mehm krnn puluwn
-import studentRouter from './routes/studentRouter.js';
+
+
 import productRouter from './routes/productRouter.js';
 import userRouter from './routes/userRouter.js';
 import jwt from "jsonwebtoken";
@@ -36,7 +36,7 @@ app.use(
     }
 )
 
-app.use("/api/students", studentRouter)  //student kyl hoyan awoth me studentRouter block ekt ywnn
+
 app.use("/api/products", productRouter)
 app.use("/api/users", userRouter)
 
