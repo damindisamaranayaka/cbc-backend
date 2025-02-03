@@ -26,7 +26,7 @@ app.use(
       console.log(token)
 
       if(token != null){
-        jwt.verify(token, "cbc-secret-key-7973", (error,decoded)=>{  //jwt me ena token ek decode krnn mge key ek use krl. 
+        jwt.verify(token, process.env.SECRET, (error,decoded)=>{  //jwt me ena token ek decode krnn mge key ek use krl. 
            if(!error){
                // console.log(decoded)
                 req.user=decoded
