@@ -1,6 +1,6 @@
 import Product from "../models/product.js";
 
-export function getProduct(req,res){
+/* export function getProduct(req,res){
     Product.find().then(  //database eke store wela thyen student list ek gnn puluwn  
         (productList)=>{
             res.json({
@@ -14,6 +14,17 @@ export function getProduct(req,res){
                 }  )
         }
     )
+}   */
+export async function getProduct(req,res){
+    try{const productList= await Product.find()
+    res.json({                    //uda thiyena comment krpu .then wenuwt me await kramay use krnn puluwn
+        list : productList
+    })
+}catch(e){
+    res.json({
+        message: "error"
+    })
+}
 }
 
 export function createProduct(req,res){   //export dammama me functions eliyt gnn puluwn  //meke get,create 2k nisa normal export ekk daanne
