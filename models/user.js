@@ -35,3 +35,26 @@ const userSchema = mongoose.Schema({
 const User= mongoose.model("users", userSchema)
 
  export default User;
+
+
+ /* {
+  "email": "john.doe@example.com",
+  "firstName": "John",
+  "lastName": "Doe",
+  "password": "hashedpassword123",
+  "isBlock": false,
+  "type": "admin",
+  "profilePicture": "https://www.example.com/profile/johndoe.jpg"
+}
+  
+
+{
+  "email": "john1.doe@example.com",
+  "firstName": "John",
+  "lastName": "Doe",
+  "password": "123456",
+  "isBlock": false,
+  "type": "customer",
+  "profilePicture": "https://www.example.com/profile/johndoe.jpg"
+}
+*/

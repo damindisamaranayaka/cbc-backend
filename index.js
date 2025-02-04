@@ -1,7 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import productRouter from './routes/productRouter.js';
 import userRouter from './routes/userRouter.js';
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
@@ -28,8 +27,9 @@ app.use(
       if(token != null){
         jwt.verify(token, process.env.SECRET, (error,decoded)=>{  //jwt me ena token ek decode krnn mge key ek use krl. 
            if(!error){
-               // console.log(decoded)
+               // console.log(decoded)   mek dammam console eke log una user eke details json ekk wdyt pennanwa
                 req.user=decoded
+                
             }
         }) //userController.js eke daapu secret key ek=cbc-secret-key-7973
       }
@@ -38,7 +38,7 @@ app.use(
 )
 
 
-app.use("/api/products", productRouter)
+
 app.use("/api/users", userRouter)
 
 app.listen(
