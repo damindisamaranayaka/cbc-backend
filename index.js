@@ -2,11 +2,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import userRouter from './routes/userRouter.js';
+import productRouter from './routes/productRouter.js';
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config()
-
+app.use(cors())
 const app= express();  //app kynne api dagnn name ek 
 
 const mongourl= process.env.MONGO_DB_URL
@@ -40,6 +42,7 @@ app.use(
 
 
 app.use("/api/users", userRouter)
+app.use("/api/products", productRouter)
 
 app.listen(
     4000,
