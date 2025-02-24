@@ -8,10 +8,11 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 dotenv.config()
-app.use(cors())
-const app= express();  //app kynne api dagnn name ek 
 
+const app= express();  //app kynne api dagnn name ek 
+app.use(cors())
 const mongourl= process.env.MONGO_DB_URL
+
  mongoose.connect(mongourl,{})
  const connection= mongoose.connection;
 
