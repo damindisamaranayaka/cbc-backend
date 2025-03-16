@@ -22,10 +22,7 @@ price : {
     type : Number,
     required : true
 },
-lastPrice : {
-    type : Number,
-    required : true
-},
+
 stock : {
     type : Number,
     required : true
