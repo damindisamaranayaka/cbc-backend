@@ -30,3 +30,24 @@ export function getProduct(req,res){
         res.json(products)     //product gnn ek onama user knkt krnn puluwn wenn ona log wela hitiyath nathath
     })
 }
+export function deleteProduct(req,res){
+    if(!isAdmin(req)){
+        res.status(403).json({
+            message: "Please login as administrater to delete products."
+        })
+        return
+    }
+    const productId=req.params.productId
+    
+    Product.deleteOne(
+        ({productId:productId})
+    ).then(()=>{
+        res.json({
+            message: "Product deleted."
+        })
+    }).catch((error)=>{
+        res.status(403).json({
+            message: error
+        })
+    })
+}
